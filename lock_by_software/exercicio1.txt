@@ -1,0 +1,36 @@
+1.
+
+Sim, pode ocorrer problemas se a a ordem for trocada. 
+Se o código fosse:
+
+void lock(){
+1	victim = i;
+2	flag[i] = true;	
+3	while (flag[j] && victim == i) {};
+}
+
+A seguinte sequência causaria problemas:
+
+1. Thread 0 é escalonada e só consegue ir até a linha 2.
+   victim = 0
+
+2. Thred 1 é escalonada e consegue chegar até a região crítica.
+   victim = 1
+   flag[1] = true;
+   while (flag[0] && victim == 1) {}; // aqui flag[0] é false.
+   // região crítica 
+
+3. Thread 0 é escalonada novamente e consegue chegar na região crítica.
+   flag[0] = true;
+   while (flag[1] && victim == 0) {}; //aqui victim é 1
+   // região crítica
+
+Repare que tanto a thread 0 como a 1 irão conseguir 
+entrar em suas regiões críticas. A thread 1 irá entrar 
+pois quando ela é escalonada a thread 0 ainda não teve 
+tempo de manisfestar seu interesse em entrar na 
+região crítica, isso é, flag[0] é falso. Já a thread
+0 consegue pois quando a thread 1 é escalonada ela 
+diz que a vítima é ela. 
+
+

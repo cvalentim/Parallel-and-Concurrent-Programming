@@ -1,0 +1,20 @@
+a resposta para o primeiro exercício está no arquivo "exercicio1.txt".
+
+Os outros dois arquivos, "counter_peterson.cpp" e "counter_bakery.cpp" são 
+duas implementações de um mesmo contador. Para vê-los dando erro compile-os normalmente:
+
+g++ -l pthread counter_peterson.cpp 
+g++ -l pthread counter_bakery.cpp
+
+Eles irão demorar alguns segundos para rodor já que utilizei um sleep para 
+causar o erro. Para rodar a versão corrigida basta compilá-los definindo "FIX":
+
+g++ -l pthread -D FIX counter_peterson.cpp
+g++ -l pthread -D FIX counter_bakery.cpp
+
+Compilados dessa forma eles utilizarão lock para proteger a região crítica.
+A diferença entre os dois é a estratégia de lock implementada.  
+
+Ambos programadas foram testados usando g++ 4.4.3, sobre um Intel (R) Core(TM) 2 Duo @ 2.20GHz rodando Ubuntu 10.04.1.
+
+
