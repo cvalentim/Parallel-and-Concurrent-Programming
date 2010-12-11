@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{mitica}
+Mitica Craus.
+\newblock Parallel and distributed solutions for the optimal binary search tree
+  problem.
+\newblock In {\em IWCC '01: Proceedings of the NATO Advanced Research Workshop
+  on Advanced Environments, Tools, and Applications for Cluster
+  Computing-Revised Papers}, pages 103--117, London, UK, 2002. Springer-Verlag.
+
+\bibitem{karpinski94}
+Marek Karpinski and Wojciech Rytter.
+\newblock On a sublinear time parallel construction of optimal binary search
+  trees, 1994.
+
+\bibitem{knuth71}
+Donald~E. Knuth.
+\newblock Optimum binary search trees.
+\newblock {\em Acta Inf.}, 1:14--25, 1971.
+
+\bibitem{quinn}
+Michael Quinn.
+\newblock {\em Parallel Programming in C with MPI and OpenMP}.
+\newblock Elizabeth A. Jones, 2004.
+
+\end{thebibliography}
